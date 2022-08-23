@@ -1,4 +1,4 @@
-import { Link } from "@inertiajs/inertia-react";
+import { Link, Head } from "@inertiajs/inertia-react";
 import ReactPlayer from "react-player";
 
 export default function Show() {
@@ -7,6 +7,9 @@ export default function Show() {
             class="mx-auto w-screen h-screen relative watching-page font-poppins bg-form-bg"
             id="stream"
         >
+            <Head>
+                <title>Movie</title>
+            </Head>
             <div className="pt-[100px]">
                 <ReactPlayer
                     url="https://www.youtube.com/watch?v=BWDqy0zZAsY&list=RDBWDqy0zZAsY&start_radio=1"
