@@ -43,7 +43,7 @@ export default function FeaturedMovie({
                 </div>
             </div>
             <Link
-                href={route("prototype.movie.show", slug)}
+                href={route("user.dashboard.movie.show", slug)}
                 className="inset-0 absolute z-50"
             ></Link>
         </div>

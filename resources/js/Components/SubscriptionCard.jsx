@@ -101,7 +101,11 @@ export default function SubscriptionCard({
 
                     {/* <!-- Bottom: CTA Button --> */}
                     <div onClick={onSelectSubscription}>
-                        <Button type="button">Subscribe Now</Button>
+                        <Button type="button">
+                            <span className="text-base font-semibold">
+                                Subscribe Now
+                            </span>
+                        </Button>
                     </div>
                 </div>
             )}
