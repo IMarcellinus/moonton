@@ -1,9 +1,9 @@
 import Authenticated from "@/Layouts/Authenticated/Index";
 import SubscriptionCard from "@/Components/SubscriptionCard";
 
-export default function SubscriptionPlan() {
+export default function SubscriptionPlan({ auth }) {
     return (
-        <Authenticated>
+        <Authenticated auth={auth}>
             <div className="py-20 flex flex-col items-center">
                 <div className="text-black font-semibold text-[26px] mb-3">
                     Pricing for Everyone
@@ -25,7 +25,7 @@ export default function SubscriptionPlan() {
                     {/* <!-- For Greatest --> */}
                     <SubscriptionCard
                         isPremium
-                        name="Premium"
+                        name="premium"
                         price={800000}
                         durationInMonth={6}
                         features={["Feature 1", "Feature 2", "Feature 3"]}

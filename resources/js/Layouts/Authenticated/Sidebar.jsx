@@ -12,7 +12,10 @@ export default function Sidebar() {
                     {/* <!-- Menu --> */}
                     <div>
                         <div className="text-gray-1 text-sm mb-4">Menu</div>
-                        <Link href={route("prototype.dashboard")} className="side-link active">
+                        <Link
+                            href={route("user.dashboard.index")}
+                            className="side-link active"
+                        >
                             <svg
                                 width="24"
                                 height="24"
@@ -86,7 +89,9 @@ export default function Sidebar() {
                     <div>
                         <div className="text-gray-1 side-link mb-4">Others</div>
                         <Link
-                            href={route("prototype.subscriptionPlan")}
+                            href={route(
+                                "user.dashboard.subscriptionPlan.index"
+                            )}
                             className="side-link"
                         >
                             <svg
