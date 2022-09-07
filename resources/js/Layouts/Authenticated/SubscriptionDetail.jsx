@@ -48,7 +48,7 @@ export default function SubscriptionDetail({
                         </div>
                         <div className="rounded-full w-full h-[6px] bg-[#333333]">
                             <div
-                                className={`rounded-full h-full  bg-alerange ${loadingProgress()}`}
+                                className={`rounded-full h-full bg-alerange ${loadingProgress()}`}
                             ></div>
                         </div>
                     </div>
