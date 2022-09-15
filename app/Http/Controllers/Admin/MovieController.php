@@ -6,6 +6,9 @@ use App\Http\Controllers\Controller;
 use App\Models\Movie;
 use Illuminate\Http\Request;
 use App\Http\Requests\Admin\Movie\Store;
+use Auth;
+use Storage;
+use Str;
 
 class MovieController extends Controller
 {
@@ -37,7 +40,27 @@ class MovieController extends Controller
      */
     public function store(Store $request)
     {
-        return $request->all();
+        // if( Auth::user()->hasRole('admin') ){
+        //     $data = $request ->validate([
+        //         'name' => 'required|unique:movies,name',
+        //         'category' => 'required',
+        //         'video_url' => 'required|url',
+        //         'thumbnail' => 'required|file',
+        //         'rating' => 'required|numeric|min:0|max:5',
+        //         'is_featured' => 'nullable|boolean',
+        //     ]);
+        //     $data['thumbnail'] = Storage::disk('public')->put('movies', $request->file('thumbnail'));
+        //     $data['slug'] = Str::slug($data['name']);
+        //     $movie = Movie::create($data);
+        // }
+        $data = $request->validated();
+        $data['thumbnail'] = Storage::disk('public')->put('movies', $request->file('thumbnail'));
+        $data['slug'] = Str::slug($data['name']);
+        $movie = Movie::create($data);
+        return redirect(route('admin.dashboard.movie.index'))->with([
+            'message' => "Movie inserted successfully",
+            'type' => 'success'
+        ]);
     }
 
     /**

@@ -27,7 +27,7 @@ class Store extends FormRequest
         return [
             'name' => 'required|unique:movies,name',
             'category' => 'required',
-            'videu_url' => 'required|url',
+            'video_url' => 'required|url',
             'thumbnail' => 'required|file',
             'rating' => 'required|numeric|min:0|max:5',
             'is_featured' => 'nullable|boolean',
