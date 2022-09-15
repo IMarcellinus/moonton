@@ -1,6 +1,4 @@
 import React, { useEffect } from "react";
-import Checkbox from "@/Components/Checkbox";
-import Guest from "@/Layouts/Guest";
 import InputError from "@/Components/InputError";
 import Input from "@/Components/Input";
 import Label from "@/Components/Label";
