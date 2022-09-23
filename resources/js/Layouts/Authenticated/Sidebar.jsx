@@ -1,6 +1,5 @@
 import SubscriptionDetail from "./SubscriptionDetail";
 import MenuItem from "./MenuItem";
-import { Link } from "@inertiajs/inertia-react";
 import { UserMenu, UserOthers } from "./MenuList";
 
 export default function Sidebar({ auth }) {
@@ -16,7 +15,7 @@ export default function Sidebar({ auth }) {
                         <div className="text-gray-1 text-sm mb-4">Menu</div>
                         {UserMenu.map((menu, index) => (
                             <MenuItem
-                                key={`$(index)-$(menu.text)`}
+                                key={`${index}-${menu.text}`}
                                 link={menu.link}
                                 icon={menu.icon}
                                 text={menu.text}
@@ -32,7 +31,7 @@ export default function Sidebar({ auth }) {
                         <div className="text-gray-1 side-link mb-4">Others</div>
                         {UserOthers.map((menu, index) => (
                             <MenuItem
-                                key={`$(index)-$(menu.text)`}
+                                key={`${index}-${menu.text}`}
                                 link={menu.link}
                                 icon={menu.icon}
                                 text={menu.text}
